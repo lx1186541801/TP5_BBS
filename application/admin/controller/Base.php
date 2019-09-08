@@ -13,6 +13,13 @@ class Base extends Controller
 
     public function _initialize()
     {
+    	if(session('login_id')) {
+
+    	} else {
+    		$this->error('请先登陆系统！', 'Login/login');
+    		// $this->redirect(url('Login/login'));
+    	}
+
         $admin = $this->getOne('Admin', 1);
        	$this->assign('admin', $admin);
     }

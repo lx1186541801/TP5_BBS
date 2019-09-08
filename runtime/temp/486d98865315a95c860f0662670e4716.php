@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:59:"D:\WWW\tp5\public/../application/admin\view\blog\index.html";i:1567965817;s:49:"D:\WWW\tp5\application\admin\view\Layout\app.html";i:1567925615;s:52:"D:\WWW\tp5\application\admin\view\Layout\header.html";i:1567971682;s:50:"D:\WWW\tp5\application\admin\view\Layout\left.html";i:1567969599;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:59:"D:\WWW\tp5\public/../application/admin\view\blog\index.html";i:1567965817;s:49:"D:\WWW\tp5\application\admin\view\Layout\app.html";i:1567925615;s:52:"D:\WWW\tp5\application\admin\view\Layout\header.html";i:1567971682;s:50:"D:\WWW\tp5\application\admin\view\Layout\left.html";i:1567976953;}*/ ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -135,7 +135,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="<?php echo url('Blog/index'); ?>" class="nav-link" >
+                <a href="<?php echo url('Login/logout'); ?>" class="nav-link" >
                     <i class="icon icon-logout"></i> 退出
                 </a>
             </li>
