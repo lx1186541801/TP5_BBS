@@ -1,0 +1,73 @@
+{layout name="layout:app" /}
+
+<div class="content">
+    <div class="container-fluid">
+
+
+        <div class="row ">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header bg-light ">
+                        <div style="float:left;">
+                            
+                            分类列表
+                        </div>
+                        
+                        <div class="text-right" style="float:right;">
+                            <a href="{:url('cate/add')}">
+                                <button type="button" class="btn btn-primary ">
+                                    <i class="fa fa-align-center"></i> &nbsp; 添加分类
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>分类名称</th>
+                                        <th>关键词</th>
+                                        <th>描述</th>
+                                        <th width="7%">BLOG统计</th>
+                                        <th width="10%">创建时间</th>
+                                        <th width="10%">修改时间</th>
+                                        <th width="7%">是否开启</th>
+                                        <th width="10%">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {volist name="cates" id="cate"}
+                                    <tr>
+                                        <td>{$cate.id}</td>
+                                        <td class="text-nowrap">{$cate.catename}</td>
+                                        <td>{$cate.keywords}</td>
+                                        <td>{$cate.des}</td>
+                                        <td>{$cate.blog_nums}</td>
+                                        <td>{$cate.c_time|date="Y-m-d H:i:s", ###}</td>
+                                        <td>{$cate.u_time|date="Y-m-d H:i:s", ###}</td>
+                                        <td><button class="btn btn-rounded btn-danger btn-sm">{if condition="$cate.is_open eq 'on' " /}开启{else /}未开启 {/if}</button></td>
+                                        <td>
+                                            <a href="{:url('edit', array('cid'=>$cate.id))}"><button class="btn  btn-sm btn-primary">修改</button></a>
+                                            <a href="{:url('del', array('cid'=>$cate.id))}" onclick="return confirm('确定是否删除该信息？')"><button class="btn btn-sm btn-secondary">删除</button></a>
+                                        </td>
+                                    </tr>
+                                    {/volist}
+
+                                    </tbody>
+                                </table>
+                            </div>
+                                <div style="text-align: center;">{$cates->render()}</div>
+                        </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="text-center">
+                    <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
