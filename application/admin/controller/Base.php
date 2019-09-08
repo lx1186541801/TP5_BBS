@@ -10,6 +10,14 @@ use \think\Loader;
  */
 class Base extends Controller
 {
+
+    public function _initialize()
+    {
+        $admin = $this->getOne('Admin', 1);
+       	$this->assign('admin', $admin);
+    }
+
+
 	// 数据插入
 	public function addDate($table, $data)
 	{
@@ -52,6 +60,23 @@ class Base extends Controller
 	{
 		$data = Db::name($table)->where('id', $id)->find();
 		return $data;
+	}
+
+	/**
+	 * 获取随机字符串
+	 * @param  string $value [description]
+	 * @return [type]        [description]
+	 */
+	public function getRandString()
+	{
+		$chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		$rand_string = "";
+
+		for($i=0; $i<8; $i++) {
+			$index = mt_rand(0, strlen($chars)-1);
+			$rand_string .= $chars[$index];
+		}
+		return $rand_string;
 	}
 
 }

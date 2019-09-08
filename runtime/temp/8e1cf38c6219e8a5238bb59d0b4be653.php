@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:59:"D:\WWW\tp5\public/../application/admin\view\link\index.html";i:1567967030;s:49:"D:\WWW\tp5\application\admin\view\Layout\app.html";i:1567925615;s:52:"D:\WWW\tp5\application\admin\view\Layout\header.html";i:1567957759;s:50:"D:\WWW\tp5\application\admin\view\Layout\left.html";i:1567966762;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:59:"D:\WWW\tp5\public/../application/admin\view\link\index.html";i:1567967035;s:49:"D:\WWW\tp5\application\admin\view\Layout\app.html";i:1567925615;s:52:"D:\WWW\tp5\application\admin\view\Layout\header.html";i:1567971682;s:50:"D:\WWW\tp5\application\admin\view\Layout\left.html";i:1567969599;}*/ ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -28,44 +28,33 @@
 
     <ul class="navbar-nav ml-auto">
         <li class="nav-item d-md-down-none">
-            <a href="#">
-                <i class="fa fa-bell"></i>
-                <span class="badge badge-pill badge-danger">5</span>
+            <a href="http://<?php echo \think\Request::instance()->server('server_name'); ?>" target="_black">
+                <i class="fa fa-home">网站首页</i>
             </a>
         </li>
 
         <li class="nav-item d-md-down-none">
-            <a href="#">
-                <i class="fa fa-envelope-open"></i>
-                <span class="badge badge-pill badge-danger">5</span>
-            </a>
         </li>
 
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img src="/static/admin/imgs/avatar-1.png" class="avatar avatar-sm" alt="logo">
-                <span class="small ml-1 d-md-down-none">John Smith</span>
+                <img src="<?php echo $admin['icon']; ?>" class="avatar avatar-sm" alt="logo">
+                <span class="small ml-1 d-md-down-none"><?php echo $admin['nickname']; ?></span>
             </a>
 
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-header">Account</div>
 
-                <a href="#" class="dropdown-item">
-                    <i class="fa fa-user"></i> Profile
+                <a href="<?php echo url('Admin/index'); ?>" class="dropdown-item">
+                    <i class="fa fa-user"></i> 个人信息
                 </a>
 
-                <a href="#" class="dropdown-item">
-                    <i class="fa fa-envelope"></i> Messages
+                <a href="<?php echo url('Setting/index'); ?>" class="dropdown-item">
+                    <i class="fa fa-fire"></i> 网站设置
                 </a>
 
-                <div class="dropdown-header">Settings</div>
-
-                <a href="#" class="dropdown-item">
-                    <i class="fa fa-bell"></i> Notifications
-                </a>
-
-                <a href="#" class="dropdown-item">
-                    <i class="fa fa-wrench"></i> Settings
+                <a href="<?php echo url('Admin/pwd'); ?>" class="dropdown-item">
+                    <i class="fa fa-wrench"></i> 修改密码
                 </a>
 
                 <a href="#" class="dropdown-item">
@@ -120,9 +109,29 @@
             </li>
 
             <li class="nav-item">
-                <a href="<?php echo url('Pwd/index'); ?>" class="nav-link" >
+                <a href="<?php echo url('Admin/pwd'); ?>" class="nav-link" >
                     <i class="icon icon-pin"></i> 修改密码
                 </a>
+            </li>
+            <li class="nav-item nav-dropdown">
+                <a href="#" class="nav-link nav-dropdown-toggle">
+                    <i class="icon icon-options"></i> 其他 <i class="fa fa-caret-left"></i>
+                </a>
+
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a href="<?php echo url('Setting/other'); ?>" class="nav-link">
+                            <i class="icon icon-options"></i> 其他1
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?php echo url('Setting/other'); ?>" class="nav-link">
+                            <i class="icon icon-options-vertical"></i> 其他2
+                        </a>
+                    </li>
+
+                    
+                </ul>
             </li>
 
             <li class="nav-item">
@@ -130,57 +139,7 @@
                     <i class="icon icon-logout"></i> 退出
                 </a>
             </li>
-            
-
-            <li class="nav-item nav-dropdown">
-                <a href="#" class="nav-link nav-dropdown-toggle">
-                    <i class="icon icon-umbrella"></i> Pages <i class="fa fa-caret-left"></i>
-                </a>
-
-                <ul class="nav-dropdown-items">
-                    <li class="nav-item">
-                        <a href="blank.html" class="nav-link">
-                            <i class="icon icon-umbrella"></i> Blank Page
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="login.html" class="nav-link">
-                            <i class="icon icon-umbrella"></i> Login
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="register.html" class="nav-link">
-                            <i class="icon icon-umbrella"></i> Register
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="invoice.html" class="nav-link">
-                            <i class="icon icon-umbrella"></i> Invoice
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="404.html" class="nav-link">
-                            <i class="icon icon-umbrella"></i> 404
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="500.html" class="nav-link">
-                            <i class="icon icon-umbrella"></i> 500
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="settings.html" class="nav-link">
-                            <i class="icon icon-umbrella"></i> Settings
-                        </a>
-                    </li>
-                </ul>
-            </li>
+           
         </ul>
     </nav>
 </div>

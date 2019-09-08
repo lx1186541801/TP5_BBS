@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:62:"D:\WWW\tp5\public/../application/admin\view\setting\index.html";i:1567969340;s:49:"D:\WWW\tp5\application\admin\view\Layout\app.html";i:1567925615;s:52:"D:\WWW\tp5\application\admin\view\Layout\header.html";i:1567971682;s:50:"D:\WWW\tp5\application\admin\view\Layout\left.html";i:1567969599;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:58:"D:\WWW\tp5\public/../application/admin\view\admin\pwd.html";i:1567972537;s:49:"D:\WWW\tp5\application\admin\view\Layout\app.html";i:1567925615;s:52:"D:\WWW\tp5\application\admin\view\Layout\header.html";i:1567971682;s:50:"D:\WWW\tp5\application\admin\view\Layout\left.html";i:1567969599;}*/ ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -152,8 +152,8 @@
                     <div class="col-md-2">
                         <div class="list-group">
                             <a href="<?php echo url('Admin/index'); ?>" class="list-group-item ">个人信息</a>
-                            <a href="<?php echo url('Setting/index'); ?>" class="list-group-item active">网站设置</a>
-                            <a href="<?php echo url('Admin/pwd'); ?>" class="list-group-item ">修改密码</a>
+                            <a href="<?php echo url('Setting/index'); ?>" class="list-group-item ">网站设置</a>
+                            <a href="<?php echo url('Admin/pwd'); ?>" class="list-group-item active">修改密码</a>
                             <a href="<?php echo url('Setting/other'); ?>" class="list-group-item">其他</a>
                         </div>
                     </div>
@@ -161,84 +161,53 @@
                     <div class="col-md-10">
                         <div class="card">
                             <div class="card-header bg-light">
-                                Account Settings
+                                修改密码
                             </div>
-
-                            <div class="card-body">
-                                <div class="row mb-5">
-                                    <div class="col-md-4 mb-4">
-                                        <div>Profile Information</div>
-                                        <div class="text-muted small">These information are visible to the public.</div>
-                                    </div>
-
-                                    <div class="col-md-8">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="form-control-label">Name</label>
-                                                    <input class="form-control">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="form-control-label">Username</label>
-                                                    <input class="form-control">
-                                                </div>
-                                            </div>
+                            
+                            <form action="" method="post" >
+                                <input type="hidden" name="id" value="1">
+                                <div class="card-body">
+                                    <div class="row mt-5">
+                                        <div class="col-md-4 mb-4">
+                                            <div>管理员密码修改</div>
+                                            <div class="text-muted small">修改密码请注意请注意</div>
                                         </div>
 
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="form-control-label">Email Address</label>
-                                                    <input class="form-control">
+                                        
+                                            <div class="col-md-8">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-control-label">旧密码</label>
+                                                            <input type="password" name="o_password" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-control-label">新密码</label>
+                                                            <input type="password" name="n_password" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="form-control-label">确认新密码</label>
+                                                            <input type="password" name="n_password_2" class="form-control">
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="form-control-label">Website Link</label>
-                                                    <input class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                 </div>
 
-                                <hr>
-
-                                <div class="row mt-5">
-                                    <div class="col-md-4 mb-4">
-                                        <div>Access Credentials</div>
-                                        <div class="text-muted small">Leave credentials fields empty if you don't wish to change the password.</div>
-                                    </div>
-
-                                    <div class="col-md-8">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="form-control-label">Password</label>
-                                                    <input type="password" class="form-control">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="form-control-label">Password Confirmation</label>
-                                                    <input type="password" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="card-footer bg-light text-right">
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
                                 </div>
-                            </div>
-
-                            <div class="card-footer bg-light text-right">
-                                <button type="submit" class="btn btn-primary">Save Changes</button>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>

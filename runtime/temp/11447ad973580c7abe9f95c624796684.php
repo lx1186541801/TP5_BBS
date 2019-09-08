@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:62:"D:\WWW\tp5\public/../application/admin\view\setting\index.html";i:1567969340;s:49:"D:\WWW\tp5\application\admin\view\Layout\app.html";i:1567925615;s:52:"D:\WWW\tp5\application\admin\view\Layout\header.html";i:1567971682;s:50:"D:\WWW\tp5\application\admin\view\Layout\left.html";i:1567969599;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:60:"D:\WWW\tp5\public/../application/admin\view\admin\index.html";i:1567971665;s:49:"D:\WWW\tp5\application\admin\view\Layout\app.html";i:1567925615;s:52:"D:\WWW\tp5\application\admin\view\Layout\header.html";i:1567971682;s:50:"D:\WWW\tp5\application\admin\view\Layout\left.html";i:1567969599;}*/ ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -151,8 +151,8 @@
                 <div class="row">
                     <div class="col-md-2">
                         <div class="list-group">
-                            <a href="<?php echo url('Admin/index'); ?>" class="list-group-item ">个人信息</a>
-                            <a href="<?php echo url('Setting/index'); ?>" class="list-group-item active">网站设置</a>
+                            <a href="<?php echo url('Admin/index'); ?>" class="list-group-item active">个人信息</a>
+                            <a href="<?php echo url('Setting/index'); ?>" class="list-group-item ">网站设置</a>
                             <a href="<?php echo url('Admin/pwd'); ?>" class="list-group-item ">修改密码</a>
                             <a href="<?php echo url('Setting/other'); ?>" class="list-group-item">其他</a>
                         </div>
@@ -161,84 +161,56 @@
                     <div class="col-md-10">
                         <div class="card">
                             <div class="card-header bg-light">
-                                Account Settings
+                                个人信息
                             </div>
-
-                            <div class="card-body">
-                                <div class="row mb-5">
-                                    <div class="col-md-4 mb-4">
-                                        <div>Profile Information</div>
-                                        <div class="text-muted small">These information are visible to the public.</div>
-                                    </div>
-
-                                    <div class="col-md-8">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="form-control-label">Name</label>
-                                                    <input class="form-control">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="form-control-label">Username</label>
-                                                    <input class="form-control">
-                                                </div>
-                                            </div>
+                            <form action="" method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="id" value="<?php echo $admin['id']; ?>">
+                                <div class="card-body">
+                                    <div class="row mb-5">
+                                        <div class="col-md-4 mb-4">
+                                            <div>管理员信息</div>
+                                            <div class="text-muted small">请认真填写请认真填写请认真填写请认真填写请认真填写请认真填写请认真填写请认真填写请认真填写请认真填写请认真填写</div>
                                         </div>
 
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="form-control-label">Email Address</label>
-                                                    <input class="form-control">
+                                        <div class="col-md-8">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="form-control-label">昵称</label>
+                                                        <input class="form-control" name="nickname" value="<?php echo $admin['nickname']; ?>">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="form-control-label require">用户名</label>
+                                                        <input class="form-control" name="username" value="<?php echo $admin['username']; ?>">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="form-control-label">Website Link</label>
-                                                    <input class="form-control">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="form-control-label">头像</label>
+                                                        <input id="help-text-input" name="icon" class="form-control" placeholder="" type="file">
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <img src="<?php if($admin['icon'] != ''): ?><?php echo $admin['icon']; else: ?>/static/public/zanwutupian.png<?php endif; ?>" width="100px" alt="">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <hr>
-
-                                <div class="row mt-5">
-                                    <div class="col-md-4 mb-4">
-                                        <div>Access Credentials</div>
-                                        <div class="text-muted small">Leave credentials fields empty if you don't wish to change the password.</div>
-                                    </div>
-
-                                    <div class="col-md-8">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="form-control-label">Password</label>
-                                                    <input type="password" class="form-control">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="form-control-label">Password Confirmation</label>
-                                                    <input type="password" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="card-footer bg-light text-right">
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
                                 </div>
-                            </div>
-
-                            <div class="card-footer bg-light text-right">
-                                <button type="submit" class="btn btn-primary">Save Changes</button>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>

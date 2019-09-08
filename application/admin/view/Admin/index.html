@@ -5,94 +5,66 @@
                 <div class="row">
                     <div class="col-md-2">
                         <div class="list-group">
-                            <a href="#" class="list-group-item">Profile</a>
-                            <a href="#" class="list-group-item active">Account Settings</a>
-                            <a href="#" class="list-group-item">Notifications</a>
-                            <a href="#" class="list-group-item">Subscription</a>
+                            <a href="{:url('Admin/index')}" class="list-group-item active">个人信息</a>
+                            <a href="{:url('Setting/index')}" class="list-group-item ">网站设置</a>
+                            <a href="{:url('Admin/pwd')}" class="list-group-item ">修改密码</a>
+                            <a href="{:url('Setting/other')}" class="list-group-item">其他</a>
                         </div>
                     </div>
 
                     <div class="col-md-10">
                         <div class="card">
                             <div class="card-header bg-light">
-                                Account Settings
+                                个人信息
                             </div>
-
-                            <div class="card-body">
-                                <div class="row mb-5">
-                                    <div class="col-md-4 mb-4">
-                                        <div>Profile Information</div>
-                                        <div class="text-muted small">These information are visible to the public.</div>
-                                    </div>
-
-                                    <div class="col-md-8">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="form-control-label">Name</label>
-                                                    <input class="form-control">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="form-control-label">Username</label>
-                                                    <input class="form-control">
-                                                </div>
-                                            </div>
+                            <form action="" method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="id" value="{$admin.id}">
+                                <div class="card-body">
+                                    <div class="row mb-5">
+                                        <div class="col-md-4 mb-4">
+                                            <div>管理员信息</div>
+                                            <div class="text-muted small">请认真填写请认真填写请认真填写请认真填写请认真填写请认真填写请认真填写请认真填写请认真填写请认真填写请认真填写</div>
                                         </div>
 
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="form-control-label">Email Address</label>
-                                                    <input class="form-control">
+                                        <div class="col-md-8">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="form-control-label">昵称</label>
+                                                        <input class="form-control" name="nickname" value="{$admin.nickname}">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="form-control-label require">用户名</label>
+                                                        <input class="form-control" name="username" value="{$admin.username}">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="form-control-label">Website Link</label>
-                                                    <input class="form-control">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="form-control-label">头像</label>
+                                                        <input id="help-text-input" name="icon" class="form-control" placeholder="" type="file">
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <img src="{if condition="$admin.icon neq ''"}{$admin.icon}{else }__PUBLIC__/public/zanwutupian.png{/if}" width="100px" alt="">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <hr>
-
-                                <div class="row mt-5">
-                                    <div class="col-md-4 mb-4">
-                                        <div>Access Credentials</div>
-                                        <div class="text-muted small">Leave credentials fields empty if you don't wish to change the password.</div>
-                                    </div>
-
-                                    <div class="col-md-8">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="form-control-label">Password</label>
-                                                    <input type="password" class="form-control">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="form-control-label">Password Confirmation</label>
-                                                    <input type="password" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="card-footer bg-light text-right">
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
                                 </div>
-                            </div>
-
-                            <div class="card-footer bg-light text-right">
-                                <button type="submit" class="btn btn-primary">Save Changes</button>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>

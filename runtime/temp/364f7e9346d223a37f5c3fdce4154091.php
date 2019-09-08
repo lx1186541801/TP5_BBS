@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:62:"D:\WWW\tp5\public/../application/admin\view\setting\index.html";i:1567969340;s:49:"D:\WWW\tp5\application\admin\view\Layout\app.html";i:1567925615;s:52:"D:\WWW\tp5\application\admin\view\Layout\header.html";i:1567971682;s:50:"D:\WWW\tp5\application\admin\view\Layout\left.html";i:1567969599;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:62:"D:\WWW\tp5\public/../application/admin\view\setting\other.html";i:1567969351;s:49:"D:\WWW\tp5\application\admin\view\Layout\app.html";i:1567925615;s:52:"D:\WWW\tp5\application\admin\view\Layout\header.html";i:1567971682;s:50:"D:\WWW\tp5\application\admin\view\Layout\left.html";i:1567969599;}*/ ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -152,9 +152,9 @@
                     <div class="col-md-2">
                         <div class="list-group">
                             <a href="<?php echo url('Admin/index'); ?>" class="list-group-item ">个人信息</a>
-                            <a href="<?php echo url('Setting/index'); ?>" class="list-group-item active">网站设置</a>
+                            <a href="<?php echo url('Setting/index'); ?>" class="list-group-item ">网站设置</a>
                             <a href="<?php echo url('Admin/pwd'); ?>" class="list-group-item ">修改密码</a>
-                            <a href="<?php echo url('Setting/other'); ?>" class="list-group-item">其他</a>
+                            <a href="<?php echo url('Setting/other'); ?>" class="list-group-item active">其他</a>
                         </div>
                     </div>
 
