@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:60:"D:\WWW\tp5\public/../application/admin\view\index\index.html";i:1567925620;s:49:"D:\WWW\tp5\application\admin\view\Layout\app.html";i:1567925615;s:52:"D:\WWW\tp5\application\admin\view\Layout\header.html";i:1567957759;s:50:"D:\WWW\tp5\application\admin\view\Layout\left.html";i:1567925837;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:60:"D:\WWW\tp5\public/../application/admin\view\index\index.html";i:1567966965;s:49:"D:\WWW\tp5\application\admin\view\Layout\app.html";i:1567925615;s:52:"D:\WWW\tp5\application\admin\view\Layout\header.html";i:1567968542;s:50:"D:\WWW\tp5\application\admin\view\Layout\left.html";i:1567966762;}*/ ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -28,17 +28,12 @@
 
     <ul class="navbar-nav ml-auto">
         <li class="nav-item d-md-down-none">
-            <a href="#">
-                <i class="fa fa-bell"></i>
-                <span class="badge badge-pill badge-danger">5</span>
+            <a href="" target="_black">
+                <i class="fa fa-home">网站首页</i>
             </a>
         </li>
 
         <li class="nav-item d-md-down-none">
-            <a href="#">
-                <i class="fa fa-envelope-open"></i>
-                <span class="badge badge-pill badge-danger">5</span>
-            </a>
         </li>
 
         <li class="nav-item dropdown">
@@ -51,21 +46,15 @@
                 <div class="dropdown-header">Account</div>
 
                 <a href="#" class="dropdown-item">
-                    <i class="fa fa-user"></i> Profile
+                    <i class="fa fa-user"></i> 个人信息
                 </a>
 
                 <a href="#" class="dropdown-item">
-                    <i class="fa fa-envelope"></i> Messages
-                </a>
-
-                <div class="dropdown-header">Settings</div>
-
-                <a href="#" class="dropdown-item">
-                    <i class="fa fa-bell"></i> Notifications
+                    <i class="fa fa-fire"></i> 网站设置
                 </a>
 
                 <a href="#" class="dropdown-item">
-                    <i class="fa fa-wrench"></i> Settings
+                    <i class="fa fa-wrench"></i> 修改密码
                 </a>
 
                 <a href="#" class="dropdown-item">
@@ -96,6 +85,12 @@
             <li class="nav-item">
                 <a href="<?php echo url('Blog/index'); ?>" class="nav-link" >
                     <i class="icon icon-notebook"></i> 博客列表
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="<?php echo url('Link/index'); ?>" class="nav-link" >
+                    <i class="icon icon-link"></i> 友情链接
                 </a>
             </li>
 

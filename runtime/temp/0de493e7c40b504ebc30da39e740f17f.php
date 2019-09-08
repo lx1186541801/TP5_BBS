@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:59:"D:\WWW\tp5\public/../application/admin\view\cate\index.html";i:1567957899;s:49:"D:\WWW\tp5\application\admin\view\Layout\app.html";i:1567925615;s:52:"D:\WWW\tp5\application\admin\view\Layout\header.html";i:1567957759;s:50:"D:\WWW\tp5\application\admin\view\Layout\left.html";i:1567925837;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:59:"D:\WWW\tp5\public/../application/admin\view\cate\index.html";i:1567957899;s:49:"D:\WWW\tp5\application\admin\view\Layout\app.html";i:1567925615;s:52:"D:\WWW\tp5\application\admin\view\Layout\header.html";i:1567957759;s:50:"D:\WWW\tp5\application\admin\view\Layout\left.html";i:1567966762;}*/ ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -96,6 +96,12 @@
             <li class="nav-item">
                 <a href="<?php echo url('Blog/index'); ?>" class="nav-link" >
                     <i class="icon icon-notebook"></i> 博客列表
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="<?php echo url('Link/index'); ?>" class="nav-link" >
+                    <i class="icon icon-link"></i> 友情链接
                 </a>
             </li>
 

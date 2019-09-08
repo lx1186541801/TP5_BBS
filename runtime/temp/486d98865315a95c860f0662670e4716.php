@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:59:"D:\WWW\tp5\public/../application/admin\view\blog\index.html";i:1567961564;s:49:"D:\WWW\tp5\application\admin\view\Layout\app.html";i:1567925615;s:52:"D:\WWW\tp5\application\admin\view\Layout\header.html";i:1567957759;s:50:"D:\WWW\tp5\application\admin\view\Layout\left.html";i:1567925837;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:59:"D:\WWW\tp5\public/../application/admin\view\blog\index.html";i:1567965817;s:49:"D:\WWW\tp5\application\admin\view\Layout\app.html";i:1567925615;s:52:"D:\WWW\tp5\application\admin\view\Layout\header.html";i:1567957759;s:50:"D:\WWW\tp5\application\admin\view\Layout\left.html";i:1567966762;}*/ ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -96,6 +96,12 @@
             <li class="nav-item">
                 <a href="<?php echo url('Blog/index'); ?>" class="nav-link" >
                     <i class="icon icon-notebook"></i> 博客列表
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="<?php echo url('Link/index'); ?>" class="nav-link" >
+                    <i class="icon icon-link"></i> 友情链接
                 </a>
             </li>
 
@@ -206,18 +212,18 @@
                             <table class="table table-striped">
                                 <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>分类ID</th>
-                                    <th>用户名</th>
+                                    <th width="4%">ID</th>
+                                    <th width="6%">分类ID</th>
+                                    <th width="6%">用户名</th>
                                     <th>标题</th>
                                     <th>标题图</th>
-                                    <th width="7%">关键词</th>
-                                    <th width="10%">点击</th>
-                                    <th width="10%">描述</th>
+                                    <th>关键词</th>
+                                    <th>描述</th>
+                                    <th width="4%">点击</th>
                                     <th width="10%">创建时间</th>
                                     <th width="10%">修改时间</th>
-                                    <th width="7%">是否开启</th>
-                                    <th width="10%">操作</th>
+                                    <th width="6%">是否开启</th>
+                                    <th width="9%">操作</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -226,11 +232,11 @@
                                         <td><?php echo $blog['id']; ?></td>
                                         <td class="text-nowrap"><?php echo $blog['cid']; ?></td>
                                         <td><?php echo $blog['uid']; ?></td>
-                                        <td><?php echo $blog['img']; ?></td>
-                                        <td><?php echo $blog['title']; ?></td>
-                                        <td><?php echo $blog['keywords']; ?></td>
-                                        <td><?php echo $blog['click']; ?></td>
+                                        <td><?php echo substr($blog['title'],0,20); ?></td>
+                                        <td><img src="<?php if($blog['img'] != ''): ?><?php echo $blog['img']; else: ?>/static/public/zanwutupian.png<?php endif; ?>" width="70px"></td>
+                                        <td><?php echo substr($blog['keywords'],0,20); ?></td>
                                         <td><?php echo $blog['des']; ?></td>
+                                        <td><?php echo $blog['click']; ?></td>
                                         <td><?php echo date("Y-m-d H:i:s", $blog['c_time']); ?></td>
                                         <td><?php echo date("Y-m-d H:i:s", $blog['u_time']); ?></td>
                                         <td><button class="btn btn-rounded btn-danger btn-sm"><?php if($blog['is_open'] == 'on'): ?>开启<?php else: ?>未开启 <?php endif; ?></button></td>
@@ -243,6 +249,7 @@
                                 </tbody>
                             </table>
                         </div>
+                         <div style="text-align: center;"><?php echo $blogs->render(); ?></div>
                     </div>
                 </div>
             </div>

@@ -13,7 +13,7 @@
                         <div class="card">
                             <div class="card-header bg-light">
                                 <div style="float:left;">
-		                            添加博客
+		                            修改博客
 		                        </div>
 		                        
 		                        <div class="text-right" style="float:right;">
@@ -25,6 +25,7 @@
 		                        </div>
                             </div>
 							<form action="" method="post" name="myform" enctype="multipart/form-data">
+								<input type="hidden" name="id" value="{$blog.id}">
 								<div class="card-body">
 	                                <div class="row mt-4">
 	                                	<div class="col-md-8">
@@ -32,7 +33,7 @@
 	                                            <label for="single-select">选择分类</label>
 	                                            <select id="single-select" class="form-control" name="cid">
 	                                            	{volist name="cates" id ="cate"}
-	                                                <option value="{$cate.id}">{$cate.catename}</option>
+	                                                <option value="{$cate.id}" {if condition="$cate.id eq $blog.cid"}selected="selected"{/if}>{$cate.catename}</option>
 	                                                {/volist}
 	                                            </select>
 	                                        </div>
@@ -43,7 +44,7 @@
 	                                    <div class="col-md-8">
 	                                        <div class="form-group">
 	                                            <label for="required-input" class="require">标题</label>
-	                                            <input id="required-input" name="title" class="form-control" value="">
+	                                            <input id="required-input" name="title" class="form-control" value="{$blog.title}">
 	                                        </div>
 	                                    </div>
 	                                </div>
@@ -52,7 +53,7 @@
 	                                    <div class="col-md-8">
 	                                        <div class="form-group">
 	                                            <label for="help-text-input" class="form-control-label">关键词</label>
-	                                            <input id="help-text-input" name="keywords" class="form-control" placeholder="">
+	                                            <input id="help-text-input" name="keywords" class="form-control" placeholder="" value="{$blog.keywords}">
 	                                            <small class="form-text">关键词用来检索同类文章 词与词之间用空格隔开</small>
 	                                        </div>
 	                                    </div>
@@ -63,6 +64,7 @@
 	                                        <div class="form-group">
 	                                            <label for="help-text-input" class="form-control-label">标题图</label>
 	                                            <input id="help-text-input" name="img" class="form-control" placeholder="" type="file">
+	                                            <img src="{$blog.img}" width="400px" alt="">
 	                                        </div>
 	                                    </div>
 	                                </div>
@@ -71,7 +73,7 @@
 	                                    <div class="col-md-8">
 	                                        <div class="form-group">
 	                                            <label for="help-text-input" class="form-control-label require" >内容</label>
-	                                            <script type="text/plain" id="myEditor" name="content" style="width:1000px;height:240px;"></script>
+	                                            <script type="text/plain" id="myEditor" name="content" style="width:1000px;height:240px;">{$blog.content}</script>
 	                                        </div>
 	                                    </div>
 	                                </div>
@@ -81,7 +83,7 @@
 		                                <div class="col-md-3">
 	                                        <div class="toggle-switch" data-ts-color="primary">
 	                                            <label for="ts2" class="ts-label">是否开启</label>
-	                                            <input id="ts2" type="checkbox" name="is_open"hidden="hidden">
+	                                            <input id="ts2" type="checkbox" name="is_open"hidden="hidden"  {if condition="$blog.is_open eq 'on'" /}checked="checked"{/if} >
 	                                            <label for="ts2" class="ts-helper"></label>
 	                                        </div>
 	                                    </div>

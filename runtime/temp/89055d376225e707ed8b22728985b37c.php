@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:57:"D:\WWW\tp5\public/../application/admin\view\blog\add.html";i:1567964965;s:49:"D:\WWW\tp5\application\admin\view\Layout\app.html";i:1567925615;s:52:"D:\WWW\tp5\application\admin\view\Layout\header.html";i:1567957759;s:50:"D:\WWW\tp5\application\admin\view\Layout\left.html";i:1567925837;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:58:"D:\WWW\tp5\public/../application/admin\view\blog\edit.html";i:1567966505;s:49:"D:\WWW\tp5\application\admin\view\Layout\app.html";i:1567925615;s:52:"D:\WWW\tp5\application\admin\view\Layout\header.html";i:1567957759;s:50:"D:\WWW\tp5\application\admin\view\Layout\left.html";i:1567925837;}*/ ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -194,7 +194,7 @@
                         <div class="card">
                             <div class="card-header bg-light">
                                 <div style="float:left;">
-		                            添加博客
+		                            修改博客
 		                        </div>
 		                        
 		                        <div class="text-right" style="float:right;">
@@ -206,6 +206,7 @@
 		                        </div>
                             </div>
 							<form action="" method="post" name="myform" enctype="multipart/form-data">
+								<input type="hidden" name="id" value="<?php echo $blog['id']; ?>">
 								<div class="card-body">
 	                                <div class="row mt-4">
 	                                	<div class="col-md-8">
@@ -213,7 +214,7 @@
 	                                            <label for="single-select">选择分类</label>
 	                                            <select id="single-select" class="form-control" name="cid">
 	                                            	<?php if(is_array($cates) || $cates instanceof \think\Collection || $cates instanceof \think\Paginator): $i = 0; $__LIST__ = $cates;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cate): $mod = ($i % 2 );++$i;?>
-	                                                <option value="<?php echo $cate['id']; ?>"><?php echo $cate['catename']; ?></option>
+	                                                <option value="<?php echo $cate['id']; ?>" <?php if($cate['id'] == $blog['cid']): ?>selected="selected"<?php endif; ?>><?php echo $cate['catename']; ?></option>
 	                                                <?php endforeach; endif; else: echo "" ;endif; ?>
 	                                            </select>
 	                                        </div>
@@ -224,7 +225,7 @@
 	                                    <div class="col-md-8">
 	                                        <div class="form-group">
 	                                            <label for="required-input" class="require">标题</label>
-	                                            <input id="required-input" name="title" class="form-control" value="">
+	                                            <input id="required-input" name="title" class="form-control" value="<?php echo $blog['title']; ?>">
 	                                        </div>
 	                                    </div>
 	                                </div>
@@ -233,7 +234,7 @@
 	                                    <div class="col-md-8">
 	                                        <div class="form-group">
 	                                            <label for="help-text-input" class="form-control-label">关键词</label>
-	                                            <input id="help-text-input" name="keywords" class="form-control" placeholder="">
+	                                            <input id="help-text-input" name="keywords" class="form-control" placeholder="" value="<?php echo $blog['keywords']; ?>">
 	                                            <small class="form-text">关键词用来检索同类文章 词与词之间用空格隔开</small>
 	                                        </div>
 	                                    </div>
@@ -244,6 +245,7 @@
 	                                        <div class="form-group">
 	                                            <label for="help-text-input" class="form-control-label">标题图</label>
 	                                            <input id="help-text-input" name="img" class="form-control" placeholder="" type="file">
+	                                            <img src="<?php echo $blog['img']; ?>" width="400px" alt="">
 	                                        </div>
 	                                    </div>
 	                                </div>
@@ -252,7 +254,7 @@
 	                                    <div class="col-md-8">
 	                                        <div class="form-group">
 	                                            <label for="help-text-input" class="form-control-label require" >内容</label>
-	                                            <script type="text/plain" id="myEditor" name="content" style="width:1000px;height:240px;"></script>
+	                                            <script type="text/plain" id="myEditor" name="content" style="width:1000px;height:240px;"><?php echo $blog['content']; ?></script>
 	                                        </div>
 	                                    </div>
 	                                </div>
@@ -262,7 +264,7 @@
 		                                <div class="col-md-3">
 	                                        <div class="toggle-switch" data-ts-color="primary">
 	                                            <label for="ts2" class="ts-label">是否开启</label>
-	                                            <input id="ts2" type="checkbox" name="is_open"hidden="hidden">
+	                                            <input id="ts2" type="checkbox" name="is_open"hidden="hidden"  <?php if($blog['is_open'] == 'on'): ?>checked="checked"<?php endif; ?> >
 	                                            <label for="ts2" class="ts-helper"></label>
 	                                        </div>
 	                                    </div>

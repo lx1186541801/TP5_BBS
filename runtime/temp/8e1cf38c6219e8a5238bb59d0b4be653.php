@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:57:"D:\WWW\tp5\public/../application/admin\view\blog\add.html";i:1567964965;s:49:"D:\WWW\tp5\application\admin\view\Layout\app.html";i:1567925615;s:52:"D:\WWW\tp5\application\admin\view\Layout\header.html";i:1567957759;s:50:"D:\WWW\tp5\application\admin\view\Layout\left.html";i:1567925837;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:59:"D:\WWW\tp5\public/../application/admin\view\link\index.html";i:1567967030;s:49:"D:\WWW\tp5\application\admin\view\Layout\app.html";i:1567925615;s:52:"D:\WWW\tp5\application\admin\view\Layout\header.html";i:1567957759;s:50:"D:\WWW\tp5\application\admin\view\Layout\left.html";i:1567966762;}*/ ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -100,6 +100,12 @@
             </li>
 
             <li class="nav-item">
+                <a href="<?php echo url('Link/index'); ?>" class="nav-link" >
+                    <i class="icon icon-link"></i> 友情链接
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a href="<?php echo url('User/index'); ?>" class="nav-link" >
                     <i class="icon icon-people"></i> 用户管理
                 </a>
@@ -180,119 +186,74 @@
 </div>
 
 
-<link href="/static/ueditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="/static/ueditor/third-party/jquery.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="/static/ueditor/umeditor.config.js"></script>
-<script type="text/javascript" charset="utf-8" src="/static/ueditor/umeditor.min.js"></script>
-<script type="text/javascript" src="/static/ueditor/lang/zh-cn/zh-cn.js"></script>
 
+<div class="content">
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header bg-light">
+                            Striped Rows
+                        </div>
 
-        <div class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header bg-light">
-                                <div style="float:left;">
-		                            添加博客
-		                        </div>
-		                        
-		                        <div class="text-right" style="float:right;">
-		                            <a href="<?php echo url('blog/index'); ?>">
-		                                <button type="button" class="btn btn-primary ">
-		                                    <i class="fa fa-align-center"></i> &nbsp; 返  &nbsp; 回
-		                                </button>
-		                            </a>
-		                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Sales</th>
+                                        <th>Price</th>
+                                        <th>Discount</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td class="text-nowrap">Samsung Galaxy S8</td>
+                                        <td>31,589</td>
+                                        <td>$800</td>
+                                        <td>5%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td class="text-nowrap">Google Pixel XL</td>
+                                        <td>99,542</td>
+                                        <td>$750</td>
+                                        <td>3%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td class="text-nowrap">iPhone X</td>
+                                        <td>62,220</td>
+                                        <td>$1,200</td>
+                                        <td>0%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td class="text-nowrap">OnePlus 5T</td>
+                                        <td>50,000</td>
+                                        <td>$650</td>
+                                        <td>5%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td class="text-nowrap">Google Nexus 6</td>
+                                        <td>400</td>
+                                        <td>$400</td>
+                                        <td>7%</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </div>
-							<form action="" method="post" name="myform" enctype="multipart/form-data">
-								<div class="card-body">
-	                                <div class="row mt-4">
-	                                	<div class="col-md-8">
-											<div class="form-group">
-	                                            <label for="single-select">选择分类</label>
-	                                            <select id="single-select" class="form-control" name="cid">
-	                                            	<?php if(is_array($cates) || $cates instanceof \think\Collection || $cates instanceof \think\Paginator): $i = 0; $__LIST__ = $cates;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cate): $mod = ($i % 2 );++$i;?>
-	                                                <option value="<?php echo $cate['id']; ?>"><?php echo $cate['catename']; ?></option>
-	                                                <?php endforeach; endif; else: echo "" ;endif; ?>
-	                                            </select>
-	                                        </div>
-                                        </div>
-                                    </div>
-
-	                                <div class="row mt-4">
-	                                    <div class="col-md-8">
-	                                        <div class="form-group">
-	                                            <label for="required-input" class="require">标题</label>
-	                                            <input id="required-input" name="title" class="form-control" value="">
-	                                        </div>
-	                                    </div>
-	                                </div>
-
-	                                <div class="row mt-4">
-	                                    <div class="col-md-8">
-	                                        <div class="form-group">
-	                                            <label for="help-text-input" class="form-control-label">关键词</label>
-	                                            <input id="help-text-input" name="keywords" class="form-control" placeholder="">
-	                                            <small class="form-text">关键词用来检索同类文章 词与词之间用空格隔开</small>
-	                                        </div>
-	                                    </div>
-	                                </div>
-
-	                                <div class="row mt-4">
-	                                    <div class="col-md-8">
-	                                        <div class="form-group">
-	                                            <label for="help-text-input" class="form-control-label">标题图</label>
-	                                            <input id="help-text-input" name="img" class="form-control" placeholder="" type="file">
-	                                        </div>
-	                                    </div>
-	                                </div>
-
-	                                <div class="row mt-4">
-	                                    <div class="col-md-8">
-	                                        <div class="form-group">
-	                                            <label for="help-text-input" class="form-control-label require" >内容</label>
-	                                            <script type="text/plain" id="myEditor" name="content" style="width:1000px;height:240px;"></script>
-	                                        </div>
-	                                    </div>
-	                                </div>
-
-	                                
-	                                <div class="row mt-4">
-		                                <div class="col-md-3">
-	                                        <div class="toggle-switch" data-ts-color="primary">
-	                                            <label for="ts2" class="ts-label">是否开启</label>
-	                                            <input id="ts2" type="checkbox" name="is_open"hidden="hidden">
-	                                            <label for="ts2" class="ts-helper"></label>
-	                                        </div>
-	                                    </div>
-									</div>
-									<div class="my-4">
-										
-		                            	<button type="submit" class="btn btn-block btn-primary">添 &nbsp; &nbsp;加</button>
-		                            	
-	                            		<button type="button" onclick="history.go(-1)" class="btn btn-block btn-secondary">返 &nbsp; &nbsp;回</button>
-		                            </div>
-	                            </div>
-
-
-							</form>
-                            
                         </div>
                     </div>
                 </div>
-
-               
-            </div>
         </div>
-<script type="text/javascript">
-    //实例化编辑器
-    var um = UM.getEditor('myEditor');
-    um.addListener('focus',function(){
-        $('#focush2').html('')
-    });
-    
-</script>
+        </div>
+    </div>
+</div>
 
 </div>
 <script src="/static/admin/js/jquery.min.js"></script>

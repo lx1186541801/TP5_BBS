@@ -33,9 +33,6 @@ class Blog extends Base
 
 		// 判断是否有数据提交
 		if($data) {
-			if( ! isset($data['is_open'])) {
-				$data['is_open']	= 'off';
-			}
 			//数据验证
 			$validate = $this->dataValidate($this->table);
 
@@ -44,7 +41,19 @@ class Blog extends Base
 			}
 
 			$data['c_time']	= $data['u_time'] = time();
+			$data['des']	= htmlspecialchars(substr($data['content'], 0, 20));
+			$data['uid']	= 0;
 
+			if($file = request()->file('img')) {
+				 $info = $file->move(ROOT_PATH . 'public' . DS . 'uploads');
+				 if($info){
+		            $data['img'] = '\\uploads\\'.$info->getSaveName();
+		        }else{
+		            // 上传失败获取错误信息
+		            return $this->error($file->getError());
+		        }
+			}
+			
 			//插入数据
 			$res = $this->addDate($this->table, $data);
 			
@@ -68,7 +77,7 @@ class Blog extends Base
 	 */
 	public function del()
 	{
-		$id = input('cid');
+		$id = input('id');
 		if(db($this->table)->delete($id)) {
 			return $this->success('删除分类成功！', 'index');
 		} else {
@@ -83,7 +92,7 @@ class Blog extends Base
 	
 	public function edit()
 	{
-		$id = input('cid');
+		$id = input('id');
 
 		//获取post数据
 		$data = request()->post();
@@ -103,6 +112,16 @@ class Blog extends Base
 
 			$data['u_time'] = time();
 
+			if($file = request()->file('img')) {
+				 $info = $file->move(ROOT_PATH . 'public' . DS . 'uploads');
+				 if($info){
+		            $data['img'] = '\\uploads\\'.$info->getSaveName();
+		        }else{
+		            // 上传失败获取错误信息
+		            return $this->error($file->getError());
+		        }
+			}
+			
 			//更新数据
 			$res = $this->updateData($this->table, $data);
 			
@@ -112,9 +131,11 @@ class Blog extends Base
 				return $this->error('数据更新失败！');
 			}
 		}
-
-		$cate = $this->getOne($this->table, $id);
-		$this->assign('cate', $cate);
+		// 获取所有开启的分类名称
+		$cates = $this->getWhereData($this->cate_table, 'is_open', 'on', 'catename, id');
+		$blog = $this->getOne($this->table, $id);
+		$this->assign('cates', $cates);
+		$this->assign('blog', $blog);
 		return $this->fetch();
 	}
 }

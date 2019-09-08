@@ -35,7 +35,7 @@ class Base extends Controller
 	
 	public function getData($table, $pages)
 	{
-		$datas = Db::name($table)->paginate($pages);
+		$datas = Db::name($table)->order('id', 'desc')->paginate($pages);
 		return $datas;
 	}
 
