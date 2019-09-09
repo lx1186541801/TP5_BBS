@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:60:"D:\WWW\tp5\public/../application/index\view\index\index.html";i:1568016578;s:49:"D:\WWW\tp5\application\index\view\Layout\app.html";i:1568008027;s:52:"D:\WWW\tp5\application\index\view\Layout\header.html";i:1568016472;s:52:"D:\WWW\tp5\application\index\view\Layout\footer.html";i:1568007947;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:60:"D:\WWW\tp5\public/../application/index\view\index\index.html";i:1568019687;s:49:"D:\WWW\tp5\application\index\view\Layout\app.html";i:1568008027;s:52:"D:\WWW\tp5\application\index\view\Layout\header.html";i:1568016472;s:52:"D:\WWW\tp5\application\index\view\Layout\footer.html";i:1568007947;}*/ ?>
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -66,7 +66,7 @@
                                 <?php echo $top_blog['des']; ?>
                             </div>
                             <div class="mdl-card__actions mdl-card--border">
-                                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="<?php echo url('Index/index', array('id'=>$top_blog['id'])); ?>" target="_blank">
+                                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="<?php echo url('Index/show', array('id'=>$top_blog['id'])); ?>" target="_blank">
                                 Learn More
                                 </a>
                             </div>

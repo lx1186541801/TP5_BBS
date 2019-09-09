@@ -1,0 +1,23 @@
+{layout name="layout/app"}
+
+<div class="site-content">
+  	<div class="mdl-grid site-max-width">
+        <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp page-content">
+			<div class="mdl-card__title">
+				<h1 class="mdl-card__title-text">{$blog.title}</h1>
+			</div>
+			<div class="mdl-card__media">
+				<img class="article-image" src="{$blog.img}" border="0" alt="Portfolio Page">
+			</div>
+          	<div class="mdl-grid site-copy">
+	            <div class="mdl-cell mdl-cell--12-col">
+	            	<p><h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Introduction</h3></p>
+					<div class="mdl-cell mdl-cell--12-col mdl-card__supporting-text no-padding ">
+					    {$blog.content}
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

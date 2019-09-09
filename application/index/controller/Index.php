@@ -24,4 +24,15 @@ class Index extends Base
     	$this->assign('blogs', $blogs);
     	return $this->fetch(); 	
     }
+
+    public function show()
+    {
+
+    	$request = request()->only(['id']);
+    	$id = $request['id'];
+    	$blog = $this->getBlog($id);
+
+    	$this->assign('blog', $blog);
+    	return $this->fetch(); 	
+    }
 }

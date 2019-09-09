@@ -32,6 +32,12 @@ class Base extends Controller
 		return $lists;
 	}
 
+	public function getBlog($id)
+	{
+		$blog = Db::name('Blog')->where('id', $id)->find();
+		return $blog;
+	}
+
 	// 获取点击高的博客
 	public function getTopBlogs($limit)
 	{
