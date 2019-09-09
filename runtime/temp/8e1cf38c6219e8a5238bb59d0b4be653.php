@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:59:"D:\WWW\tp5\public/../application/admin\view\link\index.html";i:1567967035;s:49:"D:\WWW\tp5\application\admin\view\Layout\app.html";i:1567925615;s:52:"D:\WWW\tp5\application\admin\view\Layout\header.html";i:1567971682;s:50:"D:\WWW\tp5\application\admin\view\Layout\left.html";i:1567969599;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:59:"D:\WWW\tp5\public/../application/admin\view\link\index.html";i:1567967035;s:49:"D:\WWW\tp5\application\admin\view\Layout\app.html";i:1567925615;s:52:"D:\WWW\tp5\application\admin\view\Layout\header.html";i:1567977333;s:50:"D:\WWW\tp5\application\admin\view\Layout\left.html";i:1567976953;}*/ ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -28,7 +28,7 @@
 
     <ul class="navbar-nav ml-auto">
         <li class="nav-item d-md-down-none">
-            <a href="http://<?php echo \think\Request::instance()->server('server_name'); ?>" target="_black">
+            <a href="<?php echo url('Index/index/index'); ?>" target="_black">
                 <i class="fa fa-home">网站首页</i>
             </a>
         </li>
@@ -57,7 +57,7 @@
                     <i class="fa fa-wrench"></i> 修改密码
                 </a>
 
-                <a href="#" class="dropdown-item">
+                <a href="<?php echo url('Login/logout'); ?>" class="dropdown-item">
                     <i class="fa fa-lock"></i> Logout
                 </a>
             </div>
@@ -135,7 +135,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="<?php echo url('Blog/index'); ?>" class="nav-link" >
+                <a href="<?php echo url('Login/logout'); ?>" class="nav-link" >
                     <i class="icon icon-logout"></i> 退出
                 </a>
             </li>

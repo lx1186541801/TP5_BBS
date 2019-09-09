@@ -1,0 +1,27 @@
+{layout name="layout/app"}
+<div class="site-content">
+	<div class="container">
+		<div class="mdl-grid site-max-width">
+			{volist name="blogs" id ='blog'}
+			<div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+				<div class="mdl-card__media">
+					<img class="article-image" src="{if condition="$blog.img neq ''"}{$blog.img}{else }__PUBLIC__/public/zanwutupian.png{/if}" border="0" alt="">
+				</div>
+				<div class="mdl-card__title">
+					<h2 class="mdl-card__title-text">{$blog.title}</h2>
+				</div>
+				<div class="mdl-card__supporting-text">
+					{$blog.des}...
+				</div>
+				<br>        
+				<div class="mdl-card__actions mdl-card--border">
+					<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{:url('Index/show', array('id'=>$blog.id))}">
+						Learn More
+					</a>
+				</div>
+			</div>
+			{/volist}
+		</div>
+			<div style="text-align: center;">{$blogs->render()}</div>
+	</div>
+</div>

@@ -1,0 +1,37 @@
+<a href="contact.html" id="contact-button" class="mdl-button mdl-button--fab mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast mdl-shadow--4dp">
+            <i class="material-icons">mail</i>
+        </a>
+        <header class="mdl-layout__header mdl-layout__header--waterfall site-header">
+            <div class="mdl-layout__header-row site-logo-row">
+                <span class="mdl-layout__title">
+                    <div class="site-logo"></div>
+                    <span class="site-description">
+                        {if condition="$user eq ''"}
+                        <a href="{:url('User/login')}" style="text-decoration: none; color: #fff;">登录</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="{:url('User/register')} " style="text-decoration: none; color: #fff;">注册</a>
+                        {else /}
+                        {$user.nickname}
+                        <a href="{:url('User/logout')} " style="text-decoration: none; color: #fff;">退出</a>
+                        {/if}
+                    </span>
+                </span>
+            </div>
+            <div class="mdl-layout__header-row site-navigation-row mdl-layout--large-screen-only">
+                <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+                    <a class="mdl-navigation__link" href="{:url('Index/index')}">Home</a>
+                    {volist name="cates" id="cate"}
+                    <a class="mdl-navigation__link" href="{:url('Index/list', array('cid'=>$cate.id))}">{$cate.catename}</a>
+                    {/volist}
+                    <a class="mdl-navigation__link" href="{:url('Contact/index')}">留言板</a>
+                    <a class="mdl-navigation__link" href="{:url('About/index')}">关于本站</a>
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer mdl-layout--small-screen-only">
+            <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+                <a class="mdl-navigation__link" href="index.html">Home</a>
+                <a class="mdl-navigation__link" href="portfolio.html">Portfolio</a>
+                <a class="mdl-navigation__link" href="about.html">About</a>
+                <a class="mdl-navigation__link" href="contact.html">Contact</a>
+            </nav>
+        </div>

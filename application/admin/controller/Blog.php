@@ -41,7 +41,7 @@ class Blog extends Base
 			}
 
 			$data['c_time']	= $data['u_time'] = time();
-			$data['des']	= htmlspecialchars(substr($data['content'], 0, 20));
+			$data['des']	= htmlspecialchars(substr($data['content'], 0, 50));
 			$data['uid']	= 0;
 
 			if($file = request()->file('img')) {
@@ -111,6 +111,7 @@ class Blog extends Base
 			}
 
 			$data['u_time'] = time();
+			$data['des'] = htmlspecialchars(substr($data['content'], 0, 50));
 
 			if($file = request()->file('img')) {
 				 $info = $file->move(ROOT_PATH . 'public' . DS . 'uploads');
@@ -121,7 +122,7 @@ class Blog extends Base
 		            return $this->error($file->getError());
 		        }
 			}
-			
+
 			//更新数据
 			$res = $this->updateData($this->table, $data);
 			

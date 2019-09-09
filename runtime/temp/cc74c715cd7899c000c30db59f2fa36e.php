@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:60:"D:\WWW\tp5\public/../application/admin\view\index\index.html";i:1567966965;s:49:"D:\WWW\tp5\application\admin\view\Layout\app.html";i:1567925615;s:52:"D:\WWW\tp5\application\admin\view\Layout\header.html";i:1567977039;s:50:"D:\WWW\tp5\application\admin\view\Layout\left.html";i:1567976953;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:60:"D:\WWW\tp5\public/../application/admin\view\index\index.html";i:1567966965;s:49:"D:\WWW\tp5\application\admin\view\Layout\app.html";i:1567925615;s:52:"D:\WWW\tp5\application\admin\view\Layout\header.html";i:1567977333;s:50:"D:\WWW\tp5\application\admin\view\Layout\left.html";i:1567976953;}*/ ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -28,7 +28,7 @@
 
     <ul class="navbar-nav ml-auto">
         <li class="nav-item d-md-down-none">
-            <a href="http://<?php echo \think\Request::instance()->server('server_name'); ?>" target="_black">
+            <a href="<?php echo url('Index/index/index'); ?>" target="_black">
                 <i class="fa fa-home">网站首页</i>
             </a>
         </li>

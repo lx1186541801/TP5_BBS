@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:60:"D:\WWW\tp5\public/../application/admin\view\login\login.html";i:1567975043;s:55:"D:\WWW\tp5\application\admin\view\Layout\app_login.html";i:1567974515;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:60:"D:\WWW\tp5\public/../application/admin\view\login\login.html";i:1567977320;s:55:"D:\WWW\tp5\application\admin\view\Layout\app_login.html";i:1567974515;}*/ ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -51,6 +51,10 @@
 
                                 <div class="col-6">
                                     <a href="#" class="btn btn-link">Forgot password?</a>
+                                </div>
+
+                                <div class="col-12" style="text-align: center;">
+                                    <a href="<?php echo url('Index/index/index'); ?>" class="btn btn-link">网站首页</a>
                                 </div>
                             </div>
                         </div>
